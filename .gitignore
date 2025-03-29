@@ -1,32 +1,39 @@
-# Prerequisites
+# Ignorar archivos de compilación
+
+# Archivos de dependencias
 *.d
 
-# Compiled Object files
+# Archivos de objetos compilados
 *.slo
 *.lo
 *.o
 *.obj
 
-# Precompiled Headers
+# Archivos de cabecera precompilados
 *.gch
 *.pch
 
-# Compiled Dynamic libraries
+# Bibliotecas dinámicas compiladas
 *.so
 *.dylib
 *.dll
 
-# Fortran module files
+# Archivos de módulos Fortran
 *.mod
 *.smod
 
-# Compiled Static libraries
+# Bibliotecas estáticas compiladas
 *.lai
 *.la
 *.a
 *.lib
 
-# Executables
+# Ejecutables
 *.exe
 *.out
 *.app
+
+# Ignorar otros archivos de compilación y de trabajo
+*~
+*.swp
+.DS_Store
