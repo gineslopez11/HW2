@@ -5,6 +5,7 @@
 #include <iostream>
 #include <iomanip>
 #include <stdexcept>
+#include <algorithm>
 using namespace std;
 
 class Tiempo {
