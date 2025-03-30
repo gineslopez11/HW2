@@ -100,8 +100,9 @@ class Curso{
             }
             //debo hacer una deep copy y no una shallow ya que Curso posee punteros con memoria alocada 
             //dinamicamente. La copia sera un nuevo objeto pero con toda su informacion alocada en otra posicion, 
-            //entonces no habran problemas de memoria (no habran distintos punteros apuntando a una misma posicion de memoria)
-
+            //entonces no habran problemas de memoria (no habran distintos punteros apuntando a una misma posicion de memoria).
+            //Es decir que los cambios que se hagan en un Curso no afectaran al otro, que es lo que queremos. 
+            //De esta manera, por ejemplo podriamos desinscribir a un alumno de un curso de ingles, pero no se va a ver afectado su curso de matematica.
         };
 
 //c: Un Curso puede tener muchos Estudiantes, pero si el Curso se destruye, los Estudiantes no se 

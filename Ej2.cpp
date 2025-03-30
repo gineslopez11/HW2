@@ -6,7 +6,7 @@ int main (){
     Curso curso, cursoCopia;
     string nombre;
     int legajo, operacion;
-    vector<MateriaNota> mats = { {"Matematica", 10.0}, {"Fisica", 7.5} }; 
+    vector<MateriaNota> mats;; 
     shared_ptr<Estudiante> nuevoEst;
     int seguir = 1;
 
@@ -35,6 +35,7 @@ int main (){
                 cin >> nombre;
                 cout<< "Ingrese numero de legajo"<<endl;
                 cin >> legajo;
+                mats = { {"Matematica", 10.0}, {"Fisica", 7.5} };
 
                 nuevoEst = make_shared<Estudiante>(nombre, legajo, mats);
                 curso.inscribir(nuevoEst);
