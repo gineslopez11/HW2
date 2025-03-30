@@ -19,6 +19,7 @@ public:
         if (h > 12 || m >= 60 || s >= 60) {
             throw invalid_argument("ERROR: estas utilizando valores fuera de rango");
         }
+        if (ap != "a.m" && ap != "p.m") { throw invalid_argument("ERROR: Valor de AM/PM inválido."); }
         horas = h;
         minutos = m;
         segundos = s;
