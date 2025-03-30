@@ -1,39 +1,6 @@
-# Ignorar archivos de compilación
+# Ignorar todo por defecto
+*
 
-# Archivos de dependencias
-*.d
-
-# Archivos de objetos compilados
-*.slo
-*.lo
-*.o
-*.obj
-
-# Archivos de cabecera precompilados
-*.gch
-*.pch
-
-# Bibliotecas dinámicas compiladas
-*.so
-*.dylib
-*.dll
-
-# Archivos de módulos Fortran
-*.mod
-*.smod
-
-# Bibliotecas estáticas compiladas
-*.lai
-*.la
-*.a
-*.lib
-
-# Ejecutables
-*.exe
-*.out
-*.app
-
-# Ignorar otros archivos de compilación y de trabajo
-*~
-*.swp
-.DS_Store
+# No ignorar archivos .cpp y .h
+!*.cpp
+!*.h
