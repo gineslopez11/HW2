@@ -4,3 +4,6 @@
 # No ignorar archivos .cpp y .h
 !*.cpp
 !*.h
+
+# Asegurarse de que no se ignoren las carpetas
+!*/
