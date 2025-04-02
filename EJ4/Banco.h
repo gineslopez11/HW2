@@ -17,6 +17,7 @@ class Banco{
     protected:
         double balance;
         string titularCuenta;
+        
     
     public:
         Banco (double bal = 0, string titular = ""){
@@ -25,7 +26,7 @@ class Banco{
         }
 
         virtual double retirar(double cantidad) const = 0;
-        virtual vector<info> mostrarInfo() const = 0;
+        virtual void mostrarInfo() const = 0;
 
         virtual void depositar(double cantidad){
             balance += cantidad;
