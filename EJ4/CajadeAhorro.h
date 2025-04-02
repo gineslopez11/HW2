@@ -1,30 +1,25 @@
 #ifndef CAJADEAHORRO_H
 #define CAJADEAHORRO_H
 
-#include <string>
-#include <memory>
-#include <iostream>
 #include "Banco.h"
-
-using namespace std;
 
 class CajadeAhorro : public Banco {
     private:
         string tipoCuenta = "Caja de Ahorro";
-        int vecesMostrado = 0;
+        mutable int vecesMostrado = 0;
 
     public:
         CajadeAhorro(double fondos, string titular) : Banco(fondos, titular) {}
 
-        double retirar(double cantidad) {
+        void retirar(double cantidad) override {
             if (balance >= cantidad){
                 balance -= cantidad;
-                return cantidad;
+                cout <<"Se retiraron "<< cantidad << "de la Caja de Ahorro"<< endl;
 
             }else{cout << "Fondos insuficientes" << endl;}
         }
 
-        void mostrarInfo(){
+        void mostrarInfo() override {
             cout << tipoCuenta <<":"<< endl
                  << "Titular: " << titularCuenta << endl
                  << "Fondos: " << balance << endl;
@@ -35,6 +30,8 @@ class CajadeAhorro : public Banco {
                 cout << "Se descontaron 20 por exceder el limite de consultas"<< endl;
             } 
         }
+
+        friend class CuentaCorriente;
 };
 
 #endif

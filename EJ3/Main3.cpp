@@ -1,10 +1,7 @@
-#include <iostream>
 #include "INumero.h"
 #include "Entero.h"
 #include "Real.h"
 #include "Complejo.h"
-
-using namespace std;
 
 int main() {
     
