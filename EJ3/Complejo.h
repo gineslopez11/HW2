@@ -31,7 +31,7 @@ class Complejo : public INumero {
     
         unique_ptr<INumero> suma(const INumero& otro) const override {
             const Complejo& c = static_cast<const Complejo&>(otro);
-            return make_unique<Complejo>(real + c.real, imaginario + c.imaginario); //se devuelve en dos partes, la operacion se hace por separado (real e imaginaria)
+            return make_unique<Complejo>(real + c.real, imaginario + c.imaginario); //se devuelve en dos partes, la operacion se hace por parte real y imaginaria
         }
     
         unique_ptr<INumero> resta(const INumero& otro) const override {

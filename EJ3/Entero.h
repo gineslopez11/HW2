@@ -22,7 +22,7 @@ class Entero: public INumero{
             return make_unique<Entero>(numero + e.numero); //devuelvo el unique_ptr de tipo Entero apuntando a la suma de los dos numeros
         }
         
-        //HAGO LO MISMO CON TODOS LOS DEMAS CASOS Y EN LAS OTRAS CLASES TAMBIEN
+        //HAGO LO MISMO CON TODOS LOS DEMAS CASOS Y EN LAS OTRAS CLASES
 
         unique_ptr<INumero> resta (const INumero& otro) const override{
             const Entero& e = static_cast<const Entero&>(otro);

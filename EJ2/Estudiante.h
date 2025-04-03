@@ -6,9 +6,9 @@
 #include <iostream>
 using namespace std;
 
-struct MateriaNota{
+struct MateriaNota{ //uso un struct de cada materia y la nota en esa materia del estudiante
     string materia;
-    float nota;
+    float nota; 
 };
 
 class Estudiante {

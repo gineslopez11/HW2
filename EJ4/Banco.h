@@ -7,12 +7,12 @@
 using namespace std;
 
 class Banco{
-    protected:
-        double balance;
+    protected: //uso protected porque solo la caja de ahorro y la cuenta c. pueden acceder
+        double balance; 
         string titularCuenta;
 
     
-    public:
+    public: //lo puede usar el usuario
         Banco (double bal = 0, string titular = ""){
             balance = bal;
             titularCuenta = titular; 
@@ -22,7 +22,7 @@ class Banco{
         virtual void mostrarInfo() = 0;
 
         virtual void depositar(double cantidad){
-            balance += cantidad;
+            balance += cantidad; //Depositar es igual para las dos cuentas
         }
 
 
