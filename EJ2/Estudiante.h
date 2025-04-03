@@ -6,43 +6,29 @@
 #include <iostream>
 using namespace std;
 
-struct MateriaNota{ //uso un struct de cada materia y la nota en esa materia del estudiante
+struct MateriaNota { //uso un struct de cada materia y la nota en esa materia del estudiantee
     string materia;
-    float nota; 
+    float nota;
 };
 
 class Estudiante {
-    private:
-            string nombre;
-            int legajo;
-            vector<MateriaNota> materias;
-    
-    public:
-            Estudiante(string nom = "", int leg = 0, vector<MateriaNota> mat = {}){ //Por defecto se crea un estudiante "vacio"
-                nombre = nom;
-                legajo = leg;
-                materias = mat;
-            }
+private:
+    string nombre;
+    int legajo;
+    vector<MateriaNota> materias;
 
-            string getNombre(){ return nombre; }
+public:
+    Estudiante(string nom = "", int leg = 0, vector<MateriaNota> mat = {}); //Por defecto se crea un estudiante "vacio"
 
-            int getLegajo(){ return legajo; }
+    string getNombre();
 
-            float getPromedio(){
-                float suma_notas = 0;
-                for(const auto& materia : materias){
-                    suma_notas += materia.nota; //recorro el vector de materias y voy sumando todas las notas que tiene
-                }
-                return suma_notas/materias.size(); //divido la suma de sus notas por todas las notas que tiene
-            }
+    int getLegajo();
 
-            bool operator<(const Estudiante& otro) const { return nombre < otro.nombre;} //cambio operador < para poder ordenar luego alfabeticamente en el sort
+    float getPromedio();
 
-            friend ostream& operator<< (ostream& os, const Estudiante& est){
-                os << "Nombre: " << est.nombre << ", Legajo: " << est.legajo; //cambio operador << para poder imprimir directamente con cout y no tener que acceder a atributos
-                return os;
-            }
+    bool operator<(const Estudiante& otro) const; //cambio operador < para poder ordenar luego alfabeticamente en el sortnst; //cambio operador < para poder ordenar luego alfabeticamente en el sort
 
+    friend ostream& operator<<(ostream& os, const Estudiante& est); //cambio operador << para poder imprimir directamente con cout y no tener que acceder a atributosstream& os, const Estudiante& est); //cambio operador << para poder imprimir directamente con cout y no tener que acceder a atributos
 };
 
 #endif

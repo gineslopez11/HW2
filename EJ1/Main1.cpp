@@ -1,7 +1,5 @@
-#include <iostream>
 #include "Tiempo.h"
 
-using namespace std;
 int main (){
     int h,m,s;
     string ap;

@@ -9,27 +9,11 @@ class CajadeAhorro : public Banco {
         mutable int vecesMostrado = 0; //Lo uso para el mostrarInfo. Si el usuario lo pidio mas de dos veces, se le cobran 20 cada vez que lo pida
 
     public:
-        CajadeAhorro(double fondos, string titular) : Banco(fondos, titular) {}
+        CajadeAhorro(double fondos, string titular);
 
-        void retirar(double cantidad) override {
-            if (balance >= cantidad){ //Si tiene dinero disponible
-                balance -= cantidad;//Descuento del balance de la caja de ahorro
-                cout <<"Se retiraron "<< cantidad << "de la Caja de Ahorro"<< endl; 
+        void retirar(double cantidad) override;
 
-            }else{cout << "Fondos insuficientes" << endl;}
-        }
-
-        void mostrarInfo() override {
-            cout << tipoCuenta <<":"<< endl
-                 << "Titular: " << titularCuenta << endl
-                 << "Fondos: " << balance << endl;
-                 vecesMostrado += 1;
-            
-            if (vecesMostrado > 2) {
-                balance -= 20;
-                cout << "Se descontaron 20 por exceder el limite de consultas"<< endl;
-            } 
-        }
+        void mostrarInfo() override;
 
         friend class CuentaCorriente;
 };

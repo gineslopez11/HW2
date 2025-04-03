@@ -1,7 +1,5 @@
-#include <iostream>
 #include "Curso.h"
 
-using namespace std;
 int main (){
     Curso curso, cursoCopia;
     string nombre;

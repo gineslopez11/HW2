@@ -7,7 +7,7 @@
 using namespace std;
 
 class Banco{
-    protected: //uso protected porque solo la caja de ahorro y la cuenta c. pueden acceder
+    protected: //uso protected porque solo la caja de ahorro y la cuenta c. pueden acceder. Las subclases futuras tambien lo necesitaran. 
         double balance; 
         string titularCuenta;
 

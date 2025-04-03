@@ -3,6 +3,7 @@
 
 #include <string>
 #include <memory>
+#include <sstream>
 #include <iostream>
 
 using namespace std;
