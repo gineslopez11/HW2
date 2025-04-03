@@ -12,14 +12,14 @@ int main (){
 
     for (int i = 1; i <= 19; ++i) {
         vector<MateriaNota> materias = {
-            {"Matematica", static_cast<float>((i * (13 + i)) % 10)}, 
+            {"Matematica", static_cast<float>((i * (13 + i)) % 10)}, //creo materias con notas predeterminadas para no tener que pedir todo para crear un vector en cada caso 
             {"Fisica", static_cast<float>((i * (17 + i)) % 10)}  
         }; 
-        shared_ptr<Estudiante> estudiante = make_shared<Estudiante>("Estudiante" + to_string(i), 1000 + i,materias);
-        curso.inscribir(estudiante);
+        shared_ptr<Estudiante> estudiante = make_shared<Estudiante>("Estudiante" + to_string(i), 1000 + i,materias); //ceo estudiantes
+        curso.inscribir(estudiante); //solo lo hago para llenar un curso
     }
 
-    while (seguir){
+    while (seguir){ //hago while por si quieren seguir haciendo operaciones
         cout<<"Ingrese el numero de la operacion que desea realizar: "<<endl
             <<"1. Inscribir a un alumno"<<endl
             <<"2. Desinscribir a un alumno"<<endl

@@ -18,7 +18,7 @@ class Complejo : public INumero {
             imaginario = i;
         }
 
-        string toString() const override {
+        string toString() const override { //cambia con los otros tipos de numero porque en complejos tengo parte imaginaria y parte real
             stringstream ss;
             ss << real;
             if (imaginario >= 0) {
@@ -31,7 +31,7 @@ class Complejo : public INumero {
     
         unique_ptr<INumero> suma(const INumero& otro) const override {
             const Complejo& c = static_cast<const Complejo&>(otro);
-            return make_unique<Complejo>(real + c.real, imaginario + c.imaginario);
+            return make_unique<Complejo>(real + c.real, imaginario + c.imaginario); //se devuelve en dos partes, la operacion se hace por separado (real e imaginaria)
         }
     
         unique_ptr<INumero> resta(const INumero& otro) const override {

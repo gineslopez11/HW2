@@ -9,7 +9,7 @@ int main() {
     unique_ptr<INumero> r1 = make_unique<Real>(5.5);
     unique_ptr<INumero> c1 = make_unique<Complejo>(1, 3);
 
-    cout << "El entero es: " << e1->toString() << endl
+    cout << "El entero es: " << e1->toString() << endl //accedo al dato con el puntero e imprimo
          << "El real es: " << r1->toString() << endl
          << "El complejo es: " << c1->toString() << endl;
 

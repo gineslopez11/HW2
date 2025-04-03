@@ -16,9 +16,9 @@ private:
     string am_pm;
 
 public:
-    Tiempo(int h = 0, int m = 0, int s = 0, string ap = "a.m") {
+    Tiempo(int h = 0, int m = 0, int s = 0, string ap = "a.m") { //por defecto se inicializan en 0 por si no se ingresan valores en los parametros
         if (h > 12 || m >= 60 || s >= 60) {
-            throw invalid_argument("ERROR: estas utilizando valores fuera de rango");
+            throw invalid_argument("ERROR: estas utilizando valores fuera de rango"); //hago throw aca y try/catch en el main por si se ingresan erroneamente los valores
         }
         if (ap != "a.m" && ap != "p.m") { throw invalid_argument("ERROR: Valor de AM/PM inválido."); }
         horas = h;
@@ -33,7 +33,7 @@ public:
     string getAm_Pm() { return am_pm; }
 
     void setHoras(int h) { 
-        if (h > 12) { throw invalid_argument("ERROR: Hora fuera de rango."); }
+        if (h > 12) { throw invalid_argument("ERROR: Hora fuera de rango."); } //Hago set para cambiar solo la hora
         horas = h; 
     }
     void setMinutos(int m) { 
@@ -51,9 +51,9 @@ public:
 
     void imprimir24hs() {
         int horas24 = horas;
-        if (horas24 == 12 && am_pm == "a.m") {
+        if (horas24 == 12 && am_pm == "a.m") { //si son las 12 de la noche, equivale a las 00 hs en horario 24 hs
             horas24 = 0;
-        } else if (am_pm == "p.m" && horas24 < 12) {
+        } else if (am_pm == "p.m" && horas24 < 12) { //si es horario de la tarde solo le tengo que sumar 12 para el 24 hs
             horas24 += 12;
         }
 

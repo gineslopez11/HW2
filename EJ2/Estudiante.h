@@ -18,7 +18,7 @@ class Estudiante {
             vector<MateriaNota> materias;
     
     public:
-            Estudiante(string nom = "", int leg = 0, vector<MateriaNota> mat = {}){
+            Estudiante(string nom = "", int leg = 0, vector<MateriaNota> mat = {}){ //Por defecto se crea un estudiante "vacio"
                 nombre = nom;
                 legajo = leg;
                 materias = mat;
@@ -31,15 +31,15 @@ class Estudiante {
             float getPromedio(){
                 float suma_notas = 0;
                 for(const auto& materia : materias){
-                    suma_notas += materia.nota;
+                    suma_notas += materia.nota; //recorro el vector de materias y voy sumando todas las notas que tiene
                 }
-                return suma_notas/materias.size();
+                return suma_notas/materias.size(); //divido la suma de sus notas por todas las notas que tiene
             }
 
-            bool operator<(const Estudiante& otro) const { return nombre < otro.nombre;}
+            bool operator<(const Estudiante& otro) const { return nombre < otro.nombre;} //cambio operador < para poder ordenar luego alfabeticamente en el sort
 
             friend ostream& operator<< (ostream& os, const Estudiante& est){
-                os << "Nombre: " << est.nombre << ", Legajo: " << est.legajo;
+                os << "Nombre: " << est.nombre << ", Legajo: " << est.legajo; //cambio operador << para poder imprimir directamente con cout y no tener que acceder a atributos
                 return os;
             }
 
