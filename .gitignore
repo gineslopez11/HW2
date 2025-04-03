@@ -4,6 +4,7 @@
 # No ignorar archivos .cpp y .h
 !*.cpp
 !*.h
+!Makefile
 
 # Asegurarse de que no se ignoren las carpetas
 !*/
